@@ -33,13 +33,11 @@ function App() {
 
         const response = await axios.get(endpoint, API_OPTIONS);
 
-        // console.log(response);
 
         if (response.status !== 200) {
           throw new Error(`Error fetching data: ${response.statusText}`);
         }
 
-        // console.log(response.data.results);
 
         setMovieList(response.data.results);
       } catch (error) {
@@ -56,7 +54,7 @@ function App() {
   }, [debouncedSearchInput]);
   return (
     <div className="pattern">
-      <div className="wrapper">
+      <div className="wrapper min-h-screen flex flex-col items-center justify-start ">
         <Header />
         <Search searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>
