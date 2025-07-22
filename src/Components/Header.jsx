@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className=" flex flex-col items-center">
-      <img src="/hero.png" alt="Hero Logo" className=" max-w-80 w-full" />
+      <img src="/hero.png" alt="Hero Logo" className=" max-w-[400px] w-full" />
       <h1>
         Find <span className="text-gradient">Movies</span>
         You 'll Enjoy Without the Hassle
