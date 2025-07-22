@@ -4,7 +4,7 @@ function Search({ searchInput, setSearchInput }) {
     setSearchInput(e.target.value);
   }
   return (
-    <div className="search ">
+    <div className="search mt-15">
       <div>
         <img src="/search.svg" alt="Search Icon" />
         <input
