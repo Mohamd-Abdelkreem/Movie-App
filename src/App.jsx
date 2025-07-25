@@ -54,19 +54,37 @@ function App() {
   }, [debouncedSearchInput]);
   return (
     <div className="pattern">
-      <div className="wrapper min-h-screen flex flex-col items-center justify-start ">
-        <Header />
-        <Search searchInput={searchInput} setSearchInput={setSearchInput} />
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-b from-[#181818] to-transparent mb-2">
+        <img
+          src="/hero.png"
+          alt="Hero Logo"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] max-w-[90vw] opacity-70 z-0 select-none pointer-events-none"
+          style={{ objectFit: 'contain' }}
+        />
+        <div className="relative z-10 flex flex-col items-center w-full px-4">
+          <h1 className="text-7xl font-extrabold text-center mt-20 mb-10 drop-shadow-2xl [@media(max-width:515px)]:text-4xl">
+            Your Next <span className="text-gradient">Movie</span> Awaits!
+            <br />
+            <span className="text-2xl font-semibold">Watch. Enjoy. Repeat.</span>
+          </h1>
+        </div>
+      </section>
+      {/* Search Bar Section - closer to movies list */}
+      <div className="flex justify-center w-full mb-8 px-4">
+        <div className="w-full max-w-2xl">
+          <Search searchInput={searchInput} setSearchInput={setSearchInput} />
+        </div>
       </div>
+      {/* Movies Section */}
       <section className="all-movies">
         <h2 className="mt-[20px] text-center text-4xl">All Movies</h2>
         {isLoading ? (
-          <div>
-            {" "}
+          <div className="flex justify-center py-8">
             <CircularProgress />
           </div>
         ) : errorMessage ? (
-          <p className="text-red-500">{errorMessage}</p>
+          <p className="text-red-500 text-center py-8">{errorMessage}</p>
         ) : (
           <MovieList movies={movieList} />
         )}
