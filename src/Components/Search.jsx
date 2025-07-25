@@ -16,9 +16,9 @@ function Search({ searchInput, setSearchInput }) {
       />
       <input
         type="text"
-        className="flex-1 outline-none bg-transparent px-3 py-2 text-2xl text-white placeholder-gray-400
-          sm:text-lg sm:px-2 sm:py-1"
-        placeholder="Search through thousands of movies"
+        className="flex-1 outline-none bg-transparent px-3 py-2 text-base text-white placeholder-gray-400 placeholder:text-sm
+          sm:text-sm sm:px-2 sm:py-1"
+        placeholder="Search movies..."
         value={searchInput}
         onChange={handleChange}
       />
